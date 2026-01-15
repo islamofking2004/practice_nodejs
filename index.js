@@ -29,6 +29,14 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-function getInfo(req, res) {
-  res.send("hello world");
+function getAllUsers(req, res) {
+  res.send(dummy_users);
+}
+
+function addUser(req, res) {
+  const { name, age, degree, isMarried } = req.body;
+  let newUser = { name, age, degree, isMarried };
+  dummy_users.push(newUser);
+
+  res.send("suck ses").status(201);
 }
