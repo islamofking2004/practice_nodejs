@@ -14,7 +14,7 @@ let dummy_users = [
     name: "islam",
     age: 67,
     degree: "student",
-    married: false,
+    isMarried: false,
   },
 ];
 
@@ -22,7 +22,8 @@ app.use(express.json());
 app.use(cors());
 app.use(helmet());
 
-app.get("/", getInfo);
+app.get("/api/users/", getAllUsers);
+app.post("/api/users/add", addUser);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
